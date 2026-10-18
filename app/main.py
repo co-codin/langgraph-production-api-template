@@ -119,7 +119,7 @@ async def chat(request: Request, body: ChatRequest):
         security_notes = []
 
         is_allowed, cleaned_message, notes = security.check_input(body.message)
-        security_notes.extend(cleaned_message)
+        security_notes.extend(notes)
 
         if not is_allowed:
             logger.warning("Request blocked by security", extra={"extra_data": {
