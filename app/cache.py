@@ -56,7 +56,7 @@ class ResponseCache:
     def stats(self) -> dict:
         total = self._hits + self._misses
         return {
-            "size": len(self._cache),
+            "cached_entries": len(self._cache),
             "hits": self._hits,
             "misses": self._misses,
             "hit_rate": f"{(self._hits / total) if total else 0.0:.2%}",
